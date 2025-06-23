@@ -13,8 +13,12 @@ import Shop from "./pages/Shop";
 import Comments from "./pages/Comments";
 import HomePage from "./pages/HomePage";
 import { DataJson } from "./constants";
-import Dashboard from "./pages/Dashboard";
+
 import { MyProvider } from "./context";
+import Login from "./pages/auth/Login";
+import Register from "./pages/auth/Register";
+import LibraryDashboard from "./pages/dashboard";
+import BookDetails from "./pages/dashboard/[id]";
 
 
 
@@ -26,12 +30,16 @@ function App() {
     <Routes>
       <Route path="/*" element={<NotFound />}/>
       <Route path="/" element={<HomePage users={DataJson.UsersProfiles} />}/>
-      <Route path="/dashboard" element={<Dashboard />}/>
+      <Route path="/login" element={<Login />}/>
+      <Route path="/register" element={<Register />}/>
+      <Route path="/library-dashboard" element={<LibraryDashboard />}/>
+      <Route path="/book/:id" element={<BookDetails />}/>
+       {/*
       <Route path="/shop" element={<Shop />}/>
       <Route path="/comments" element={<Comments />}/>
       <Route path="/todo" element={<Todo />} />
       <Route path="/product" element={<Product />} />
-      <Route path="/product/:id" element={<ProductShow />}/>
+      <Route path="/product/:id" element={<ProductShow />}/> */}
     </Routes>
     </MyProvider>
 
